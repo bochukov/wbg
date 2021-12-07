@@ -1,0 +1,66 @@
+<div class="main-wrapper">
+  <div class="section left col-xs-3">
+      <div class="container-fluid">
+        <div class="row">
+            <!-- With bootstrap 5 we have xxl size -->
+            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-5">
+              <div class="header">
+                <fa-icon [icon]="faGlobe"></fa-icon>
+                <span>World Bank Intranet | Maps</span>
+              </div>
+              <div class="sidebar-wrapper">
+                <div class="sidebar-item">
+                  <div class="make-me-sticky">
+                    <h3>
+                      <a (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+                        <fa-icon [icon]="faSearch"></fa-icon>
+                        <span>Explore</span>
+                      </a>
+                    </h3>
+                    <h3>
+                      <fa-icon [icon]="faChartLine"></fa-icon>
+                      <span>Analysis</span>
+                    </h3>
+                    <h3>
+                      <fa-icon [icon]="faSatellite"></fa-icon>
+                      <span>Imagery</span>
+                    </h3>
+                  </div>
+                </div>
+  
+                <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed" class="detail-info">
+                      <!-- Load second component (page) for project details -->
+                      <app-project-details></app-project-details>
+                </div>
+              </div>
+
+            </div>
+    
+            <!-- Here can be place the leaflet map so it will take the full page size beside sidebar -->
+            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-7">
+              <div class="content-section">
+                  <h2>Content Section</h2>
+              </div>
+            </div>
+        </div>
+      </div>
+
+  </div>
+</div>
+<div class="footer">
+  <div class="left-side-info">
+    <ul>
+      <li>WORLD BANK GROUP</li>
+      <li>WORLDBANK</li>
+      <li>IFC</li>
+      <li>MIGA</li>
+      <li>ICSID</li>
+    </ul>
+  </div>
+  <div class="right-side-info">
+    <ul>
+      <li>Emergency Contact Number(US)(202) 458-888</li>
+      <li>&#169; 2018 The World Bank Group, All Rights Reserved</li>
+    </ul>
+  </div>
+</div>
